@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "commit.go",
+        "git.go",
+    ],
+    importpath = "github.com/bitrise-steplib/steps-generate-changelog/git",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/github.com/bitrise-io/go-utils/command:go_default_library",
+        "//vendor/github.com/pkg/errors:go_default_library",
+    ],
+)
